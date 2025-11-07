@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones</title>
+    <link rel="stylesheet" href="botones.css">
+<style>
+  
+  .gt-buttons {
+    position: fixed; right: 20px; bottom: 20px; display: flex; gap: 8px; z-index: 9999;
+  }
+  .gt-btn {
+    border: none; padding: 10px 14px; border-radius: 8px; cursor: pointer;
+  }
+  .gt-btn.en { background:#007bff; color:#fff; }
+  .gt-btn.es { background:#28a745; color:#fff; }
+
+  
+  .goog-te-banner-frame.skiptranslate, .goog-te-gadget span, .goog-te-balloon-frame { display:none !important; }
+  body { top: 0 !important; }
+  #google_translate_element { display:none; } /* ocultamos el combo */
+</style>
+
+
+<div id="google_translate_element"></div>
+
+
+<div class="gt-buttons">
+  <button class="gt-btn en" onclick="setLang('en')">English</button>
+  <button class="gt-btn es" onclick="setLang('es')">Español</button>
+</div>
+
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'en,es',
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+
+  
+  function setLang(lang) {
+    const combo = document.querySelector('.goog-te-combo');
+    if (!combo) return;
+    combo.value = (lang === 'es') ? '' : lang; 
+    combo.dispatchEvent(new Event('change'));
+  }
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">La Risa Educa</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../templates/index.html">inicio</a></li>
+        </ul>
+        <button class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+  <header class="fondo-animado">
+    <div class="contenido"></div>
+  </header>
+  <main class="fondo-animado">
+    <div class="contenido cuadro">
+      <button onclick ="mostrarImagen(1)" id="botoncito"> Objetivos generales</button>
+      <button onclick ="mostrarImagen(2)" id="botoncito2"> Objetivos especificos</button>
+      <button onclick ="mostrarImagen(3)" id="botoncito3"> mision</button>
+      <button onclick ="mostrarImagen(4)" id="botoncito4"> vision</button>    
+      <button onclick ="mostrarImagen(5)" id="botoncito5">Diagrama de pezcado</button>
+      <div id="contenedor">
+        <img id="img1" src="../objetivos/objetivo general en ingles.jpg" alt="imagen 1" style="display:none ; width: 750px; ; height: 550px;">
+        <img id="img2" src="../objetivos/objetivo especifico en ingles.jpg" alt="imagen 2 " style="display:none ; width:750px; ; height: 550px;">
+        <img id="img3" src="../MSION Y VISION/mission.jpg" alt="imagen 3 " style="display:none ; width:750px; ; height: 550px;">
+        <img id="img4" src="../MSION Y VISION/vision en ingles.jpg" alt="imagen 4 " style="display:none ; width:750px; ; height: 550px;">
+        <img id="img5" src="../espina de pezcado/espina de pezcado en ingles.jpg" alt="imagen 5 " style="display:none ; width:750px; ; height: 550px;">
+      </div>
+        <script>
+            function mostrarImagen(num) {
+                document.getElementById("img1").style.display ="none";
+                document.getElementById("img" + num).style.display = "block";
+                document.getElementById("img2").style.display ="none";
+                document.getElementById("img" + num).style.display = "block";
+                document.getElementById("img3").style.display ="none";
+                document.getElementById("img" + num).style.display = "block";
+                document.getElementById("img4").style.display ="none";
+                document.getElementById("img" + num).style.display = "block";
+                document.getElementById("img5").style.display ="none";
+                document.getElementById("img" + num).style.display = "block";
+            }
+        </script>
+    </div>
+        <footer>
+            <p>®2025 todos los derechos reservados por kevin solorzano calderon</p>
+        </footer>
+    </body>
+</html>

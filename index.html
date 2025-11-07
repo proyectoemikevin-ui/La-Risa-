@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>La Risa Educa</title>
+    <style>
+  
+  .gt-buttons {
+    position: fixed; right: 20px; bottom: 20px; display: flex; gap: 8px; z-index: 9999;
+  }
+  .gt-btn {
+    border: none; padding: 10px 14px; border-radius: 8px; cursor: pointer;
+  }
+  .gt-btn.en { background:#007bff; color:#fff; }
+  .gt-btn.es { background:#28a745; color:#fff; }
+
+  
+  .goog-te-banner-frame.skiptranslate, .goog-te-gadget span, .goog-te-balloon-frame { display:none !important; }
+  body { top: 0 !important; }
+  #google_translate_element { display:none; } /* ocultamos el combo */
+</style>
+
+
+<div id="google_translate_element"></div>
+
+
+<div class="gt-buttons">
+  <button class="gt-btn en" onclick="setLang('en')">English</button>
+  <button class="gt-btn es" onclick="setLang('es')">Español</button>
+</div>
+
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'en,es',
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+
+  
+  function setLang(lang) {
+    const combo = document.querySelector('.goog-te-combo');
+    if (!combo) return;
+    combo.value = (lang === 'es') ? '' : lang; 
+    combo.dispatchEvent(new Event('change'));
+  }
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>                                     
+    <nav class="navbar">
+        <div class="logo">La Risa Educa</div>
+        <div class="img">
+            <img src="logo.jpg" width="100px">
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li class="dropdown">
+                <a href="#" class="dropbtn">¿Quiénes somos?▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="../templates/index.html">inicio</a></li>
+                    <li><a href="../pregunta problema/pregunta.html">Pregunta problema</a></li>
+                    <li><a href="../objetivos/objettivos.html">Objetivos</a></li>
+                    <li><a href="../Arbol/Arbol.html">Árbol de problemas</a></li>
+                    <li><a href="../espina de pezcado/pez.html">Diagrama de pescado</a></li>   
+                    <li><a href="../MSION Y VISION/mision y vision.html">Misión y Visión</a></li>
+                    <li><a href="../botones/botones.html">Botones</a></li>
+                </ul>
+            </li>
+        </ul>
+        <button class="burger" id="burgerBtn" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+        <header id="inicio" class="hero-section fondo-animado">
+            <div class="contenido">
+                <h1>Bienvenidos a mi pagina web</h1>
+                <p>En este proyecto veremos la desigualdad en oportunidades educativas y como ayudar a los estudiantes del colegio Venecia a poder solucionar esta misma, mejorando el desempeño en las pruebas ICFES saber 11◦ y proporcionandoles opciones de becas  a buenas universidades o mostrandoles otros metodos para seguir estudiando despues de salir del colegio. (López, Virgüez, Silva, & Sarmiento, scielo, 2017)</p>
+                <a href="../evidencias/evidencias.html" class="btn-primary">Descubrir más</a>
+            </div>
+        </header>
+    <main>
+        <section id="servicios" class="cards-container fondo-animado">
+            <div class="contenido">
+                <h2>Nuestros servicios</h2>
+                <div class="cards">
+                    <a href="https://www.facebook.com/profile.php?id=61577191596893" class="card" target="_blank">
+                        <h3>Facebook</h3>
+                        <p>Síguenos en Facebook para más contenido educativo</p>
+                    </a>
+                    <a href="https://www.instagram.com/laughter_educates" class="card" target="_blank">
+                        <h3>Instagram</h3>
+                        <p>Encuentra recursos visuales y actualizaciones en Instagram</p>
+                    </a>
+                    <a href="https://youtube.com/shorts/8vpaMcXXBIQ" class="card" target="_blank">
+                        <h3>youtube</h3>
+                        <p>Mantente al día con nuestras últimos videos en youtube </p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="contactos" class="contact-section">
+            <video controls>
+                <source src="WhatsApp Video 2025-09-12 at 10.46.41 AM.mp4" type="video/mp4">
+            </video>
+        </section>
+        <div id="flash-menssages" class="flash-menssages"></div>
+        <section id="acerca" class="about-section fondo-animado">
+            <div class="contenido">
+                <h2>Acerca de nosotros</h2>
+                <p>Somos un sitio web que busca analizar las causas y consecuencias de la desigualdad de oportunidades educativas en estudiantes de grado 10◦ y 11◦, creando una página web en la que los estudiantes del colegio Venecia puedan hallar becas a las cuales aspirar, cursos gratuitos, ferias universitarias y oportunidades de formación.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p> ®2025 todos los derechos reservados por Kevin Solorzano Calderón</p>
+    </footer>
+
+    <!-- Script para menú hamburguesa y desplegable en móviles -->
+    <script>
+        // Menú burger para móviles
+        const burgerBtn = document.getElementById('burgerBtn');
+        const navLinks = document.getElementById('navLinks');
+        burgerBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burgerBtn.classList.toggle('active');
+        });
+
+        // Dropdown en móviles: abrir submenús por click
+        document.querySelectorAll('.dropdown .dropbtn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    this.parentElement.classList.toggle('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

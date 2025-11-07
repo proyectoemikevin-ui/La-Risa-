@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de pescado</title>
+    <link rel="stylesheet" href="pez.css">
+<style>
+  
+  .gt-buttons {
+    position: fixed; right: 20px; bottom: 20px; display: flex; gap: 8px; z-index: 9999;
+  }
+  .gt-btn {
+    border: none; padding: 10px 14px; border-radius: 8px; cursor: pointer;
+  }
+  .gt-btn.en { background:#007bff; color:#fff; }
+  .gt-btn.es { background:#28a745; color:#fff; }
+
+  
+  .goog-te-banner-frame.skiptranslate, .goog-te-gadget span, .goog-te-balloon-frame { display:none !important; }
+  body { top: 0 !important; }
+  #google_translate_element { display:none; } /* ocultamos el combo */
+</style>
+
+
+<div id="google_translate_element"></div>
+
+
+<div class="gt-buttons">
+  <button class="gt-btn en" onclick="setLang('en')">English</button>
+  <button class="gt-btn es" onclick="setLang('es')">Español</button>
+</div>
+
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'en,es',
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+
+  
+  function setLang(lang) {
+    const combo = document.querySelector('.goog-te-combo');
+    if (!combo) return;
+    combo.value = (lang === 'es') ? '' : lang; 
+    combo.dispatchEvent(new Event('change'));
+  }
+</script>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">La Risa Educa</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../templates/index.html">inicio</a></li>
+        </ul>
+        <button class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+  <main class="fondo-animado">
+    <div class="contenido cuadro">
+      <h1>Diagrama de espina de pescado</h1>
+      <img src="../espina de pezcado/espina de pezcado en ingles.jpg" alt="Imagen ">
+    </div>
+  </main>
+        <footer>
+            <p> ®2025 todos los derechos reservados por kevin solorzano calderon</p>
+        </footer>
+    </body>
+</html>
